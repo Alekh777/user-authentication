@@ -1,0 +1,25 @@
+{
+  "name": "user-authentication",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alekh777/user-authentication.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alekh777/user-authentication/issues"
+  },
+  "homepage": "https://github.com/Alekh777/user-authentication#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.2",
+    "mysql2": "^2.3.2",
+    "sequelize": "^6.7.0"
+  }
+}
