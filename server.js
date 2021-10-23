@@ -56,6 +56,11 @@ app.get('/profile', async (req, res)=>{
     res.render('profile.hbs', {user})
 })
 
+app.get('/logout', (req, res)=>{
+    req.session.userId = null
+    res.redirect('/login')
+})
+
 db.sync()
     .then(()=>{
         app.listen(PORT, ()=>{
