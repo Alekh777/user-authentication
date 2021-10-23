@@ -33,3 +33,7 @@ button:hover{
 button:active{
     background-color: rgb(221, 221, 221);
 }
+.error{
+    color: red;
+    font-weight: bold;
+}
