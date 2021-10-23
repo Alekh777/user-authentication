@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+input, button{
+    margin: 5px;
+    padding: 10px;
+    font-size: 1.1em;
+    border: none;
+    border-bottom: 1px solid gray;
+    border-radius: 5px;
+}
+h1{
+    margin-bottom: 20px;
+}
+button{
+    width: 140px;
+    border: 1px solid gray;
+    display: block;
+    margin: 20px auto;
+}
+button:hover{
+    cursor: pointer;
+}
+button:active{
+    background-color: rgb(221, 221, 221);
+}

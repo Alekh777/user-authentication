@@ -4,13 +4,20 @@ const app = express();
 const {db, Users} = require('./db')
 const PORT = process.env.PORT || 2424
 
+app.use(session({
+    resave: true,
+    saveUninitialized: true,
+    secret: 'asdkfjadfki24j3i23j5'
+}))
+
+app.use('/public', express.static(__dirname + '/public'));
 
 app.set('view engine', 'hbs')
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
-app.get('/', (req,res)=>{
-    res.send('Hi, welcome to the backend')
+app.get('/signup', (req, res)=>{
+    res.render('signup.hbs')
 })
 
 db.sync()
