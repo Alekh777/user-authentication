@@ -16,6 +16,12 @@ app.set('view engine', 'hbs')
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
+app.get('/', (req, res)=>{
+    if(!req.session.userId)
+        return res.redirect('/signup')
+    res.redirect('/profile')
+})
+
 app.get('/signup', (req, res)=>{
     res.render('signup.hbs')
 })
@@ -31,7 +37,9 @@ app.post('/signup', async (req, res)=>{
 })
 
 app.get('/login', (req, res)=>{
-    res.render('login.hbs')
+    if(!req.session.userId)
+        return res.render('login.hbs')
+    res.redirect('/profile')
 })
 
 app.post('/login', async (req, res)=>{
