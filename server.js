@@ -20,6 +20,16 @@ app.get('/signup', (req, res)=>{
     res.render('signup.hbs')
 })
 
+app.post('/signup', async (req, res)=>{
+    const user = await Users.create({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+    })
+
+    res.status(201).send(`User ${req.body.username} created`)
+})
+
 db.sync()
     .then(()=>{
         app.listen(PORT, ()=>{
