@@ -48,6 +48,14 @@ app.post('/login', async (req, res)=>{
     res.redirect('/profile')
 })
 
+app.get('/profile', async (req, res)=>{
+    if(!req.session.userId){
+        return res.redirect('/login')
+    }
+    const user = await Users.findByPk(req.session.userId)
+    res.render('profile.hbs', {user})
+})
+
 db.sync()
     .then(()=>{
         app.listen(PORT, ()=>{
